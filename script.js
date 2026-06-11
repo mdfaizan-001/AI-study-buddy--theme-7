@@ -110,10 +110,10 @@ function selectSubject(sub){
       <div class="card">
         <h3>${ch}</h3>
 
-        <button onclick="openNotes('${sub}','${ch}')">📚 Notes</button>
-        <button onclick="openQuiz('${sub}','${ch}')">📝 Quiz</button>
-        <button onclick="openLecture('${ch}')">🎥 Lecture</button>
-        <button onclick="markDone('${ch}')">✅ Done</button>
+        <button onclick="openNotes('${sub}','${ch}')"> Notes</button>
+        <button onclick="openQuiz('${sub}','${ch}')"> Quiz</button>
+        <button onclick="openLecture('${ch}')"> Lecture</button>
+        <button onclick="markDone('${ch}')"> Done</button>
 
       </div>
     `;
@@ -195,7 +195,7 @@ function resetTimer(){
 
 // ================= SCHEDULE =================
 function showSchedule(){
-  document.getElementById("selectedSubject").innerText = "📅 Weekly Schedule";
+  document.getElementById("selectedSubject").innerText = " Weekly Schedule";
 
   document.getElementById("chapters").innerHTML = `
     <div class="card">
