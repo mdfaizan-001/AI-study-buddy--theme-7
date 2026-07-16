@@ -4,11 +4,9 @@ body{
   background:#0f172a;
   color:#e2e8f0;
 }
-
 .container{
   display:flex;
 }
-
 /* SIDEBAR */
 .sidebar{
   width:230px;
@@ -17,11 +15,9 @@ body{
   background:#020617;
   border-right:1px solid #1e293b;
 }
-
 .sidebar h2{
   color:#94a3b8;
 }
-
 .sidebar button{
   width:100%;
   margin:6px 0;
@@ -32,36 +28,30 @@ body{
   color:#22c55e;
   cursor:pointer;
 }
-
 .sidebar button:hover{
   background:#22c55e;
   color:black;
   box-shadow:0 0 10px #22c55e;
   transform:translateX(5px);
 }
-
 /* MAIN */
 .main{
   flex:1;
   padding:20px;
 }
-
 /* HERO */
 .hero{
   text-align:center;
 }
-
 .hero h1{
   color:#22c55e;
 }
-
 /* DASHBOARD */
 .dashboard{
   display:flex;
   gap:10px;
   margin:20px 0;
 }
-
 .stat-card{
   flex:1;
   background:#1e293b;
@@ -69,11 +59,9 @@ body{
   border-radius:10px;
   text-align:center;
 }
-
 .stat-card:hover{
   box-shadow:0 0 15px #22c55e;
 }
-
 /* CARD */
 .card{
   background:#1e293b;
@@ -81,11 +69,9 @@ body{
   margin:10px 0;
   border-radius:10px;
 }
-
 .card:hover{
   box-shadow:0 0 15px #22c55e;
 }
-
 /* BUTTON */
 button{
   padding:8px 12px;
@@ -95,13 +81,11 @@ button{
   background:#1e293b;
   color:#22c55e;
 }
-
 button:hover{
   background:#22c55e;
   color:black;
   box-shadow:0 0 10px #22c55e;
 }
-
 /* INPUT */
 input{
   padding:10px;
@@ -110,7 +94,6 @@ input{
   background:#1e293b;
   color:white;
 }
-
 /* TIMER */
 #timer{
   font-size:40px;
