@@ -7,7 +7,6 @@ function saveName(){
 
 // ================= FULL CBSE DATA =================
 let data = {
-
   Maths: [
     "Real Numbers",
     "Polynomials",
@@ -23,7 +22,6 @@ let data = {
     "Statistics",
     "Probability"
   ],
-
   Science: [
     "Chemical Reactions and Equations",
     "Acids Bases and Salts",
@@ -39,7 +37,6 @@ let data = {
     "Magnetic Effects of Electric Current",
     "Sources of Energy"
   ],
-
   English: [
     "A Letter to God",
     "Nelson Mandela Long Walk to Freedom",
@@ -52,7 +49,6 @@ let data = {
     "The Sermon at Benares",
     "The Proposal"
   ],
-
   Hindi: [
     "Kshitij Chapter 1",
     "Kshitij Chapter 2",
@@ -63,7 +59,6 @@ let data = {
     "Sparsh Chapter 2",
     "Sparsh Chapter 3"
   ],
-
   SST: [
     "Rise of Nationalism in Europe",
     "Nationalism in India",
@@ -87,7 +82,6 @@ let data = {
     "Money and Credit",
     "Globalisation and the Indian Economy"
   ],
-
   Computer: [
     "Computer Basics",
     "HTML Basics",
@@ -104,7 +98,6 @@ function selectSubject(sub){
   document.getElementById("selectedSubject").innerText = sub;
 
   let html = "";
-
   data[sub].forEach(ch=>{
     html += `
       <div class="card">
@@ -118,7 +111,6 @@ function selectSubject(sub){
       </div>
     `;
   });
-
   document.getElementById("chapters").innerHTML = html;
 }
 
@@ -146,18 +138,15 @@ function markDone(ch){
   if(!done.includes(ch)){
     done.push(ch);
     localStorage.setItem("done", JSON.stringify(done));
-
     skill = Math.min(100, skill + 2);
     localStorage.setItem("skill", skill);
   }
-
   updateStats();
 }
 
 function updateStats(){
   let done = JSON.parse(localStorage.getItem("done")) || [];
   let skill = parseInt(localStorage.getItem("skill")) || 0;
-
   document.getElementById("completedCount").innerText = done.length;
   document.getElementById("skillScore").innerText = skill + "%";
 }
@@ -165,19 +154,14 @@ function updateStats(){
 // ================= TIMER =================
 let timer = null;
 let sec = 0;
-
 function startTimer(){
   if(timer) return;
-
   timer = setInterval(()=>{
     sec++;
-
     let m = Math.floor(sec/60);
     let s = sec % 60;
-
     document.getElementById("timer").innerText =
       String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
-
   },1000);
 }
 
@@ -185,7 +169,6 @@ function pauseTimer(){
   clearInterval(timer);
   timer = null;
 }
-
 function resetTimer(){
   clearInterval(timer);
   timer = null;
@@ -196,7 +179,6 @@ function resetTimer(){
 // ================= SCHEDULE =================
 function showSchedule(){
   document.getElementById("selectedSubject").innerText = " Weekly Schedule";
-
   document.getElementById("chapters").innerHTML = `
     <div class="card">
       <h3>Weekly Study Plan</h3>
@@ -207,9 +189,7 @@ function showSchedule(){
       <p>Thu: Maths → Science → Practice</p>
       <p>Fri: English → SST → Revision</p>
       <p>Sat: Mock Test + Full Revision</p>
-
       <hr>
-
       <p><b>Rule:</b> 45 min study + 10 min break</p>
     </div>
   `;
