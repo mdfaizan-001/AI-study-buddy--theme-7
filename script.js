@@ -4,7 +4,6 @@ function saveName(){
   localStorage.setItem("name", name);
   document.getElementById("welcome").innerText = "Welcome " + name;
 }
-
 // ================= FULL CBSE DATA =================
 let data = {
   Maths: [
@@ -92,49 +91,40 @@ let data = {
     "Digital Tools"
   ]
 };
-
 // ================= SUBJECT =================
 function selectSubject(sub){
   document.getElementById("selectedSubject").innerText = sub;
-
   let html = "";
   data[sub].forEach(ch=>{
     html += `
       <div class="card">
         <h3>${ch}</h3>
-
         <button onclick="openNotes('${sub}','${ch}')"> Notes</button>
         <button onclick="openQuiz('${sub}','${ch}')"> Quiz</button>
         <button onclick="openLecture('${ch}')"> Lecture</button>
         <button onclick="markDone('${ch}')"> Done</button>
-
-      </div>
+        </div>
     `;
   });
   document.getElementById("chapters").innerHTML = html;
 }
-
 // ================= LINKS =================
 function openNotes(sub,ch){
   let query = `${sub} ${ch} class 10 CBSE notes pdf`;
   window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`);
 }
-
 function openQuiz(sub,ch){
   let query = `${sub} ${ch} class 10 CBSE mcq test`;
   window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`);
 }
-
 function openLecture(ch){
   let query = `${ch} class 10 CBSE full explanation`;
   window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`);
 }
-
 // ================= PROGRESS =================
 function markDone(ch){
   let done = JSON.parse(localStorage.getItem("done")) || [];
   let skill = parseInt(localStorage.getItem("skill")) || 0;
-
   if(!done.includes(ch)){
     done.push(ch);
     localStorage.setItem("done", JSON.stringify(done));
@@ -143,14 +133,12 @@ function markDone(ch){
   }
   updateStats();
 }
-
 function updateStats(){
   let done = JSON.parse(localStorage.getItem("done")) || [];
   let skill = parseInt(localStorage.getItem("skill")) || 0;
   document.getElementById("completedCount").innerText = done.length;
   document.getElementById("skillScore").innerText = skill + "%";
 }
-
 // ================= TIMER =================
 let timer = null;
 let sec = 0;
@@ -164,7 +152,6 @@ function startTimer(){
       String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
   },1000);
 }
-
 function pauseTimer(){
   clearInterval(timer);
   timer = null;
@@ -175,14 +162,12 @@ function resetTimer(){
   sec = 0;
   document.getElementById("timer").innerText = "00:00";
 }
-
 // ================= SCHEDULE =================
 function showSchedule(){
   document.getElementById("selectedSubject").innerText = " Weekly Schedule";
   document.getElementById("chapters").innerHTML = `
     <div class="card">
       <h3>Weekly Study Plan</h3>
-
       <p>Mon: Maths → Science → English</p>
       <p>Tue: Science → Hindi → Computer</p>
       <p>Wed: SST → Maths → Revision</p>
@@ -194,6 +179,5 @@ function showSchedule(){
     </div>
   `;
 }
-
 // ================= LOAD =================
 window.onload = updateStats;
