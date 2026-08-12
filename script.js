@@ -48,7 +48,7 @@ let data = {
     "The Sermon at Benares",
     "The Proposal"
   ],
-  Hindi: [
+   Hindi: [
     "Kshitij Chapter 1",
     "Kshitij Chapter 2",
     "Kshitij Chapter 3",
