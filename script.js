@@ -1,4 +1,3 @@
-// ================= USER =================
 function saveName(){
   let name = document.getElementById("username").value;
   localStorage.setItem("name", name);
@@ -6,6 +5,7 @@ function saveName(){
 }
 // ================= FULL CBSE DATA =================
 let data = {
+  
   Maths: [
     "Real Numbers",
     "Polynomials",
@@ -21,6 +21,7 @@ let data = {
     "Statistics",
     "Probability"
   ],
+  
   Science: [
     "Chemical Reactions and Equations",
     "Acids Bases and Salts",
@@ -36,6 +37,7 @@ let data = {
     "Magnetic Effects of Electric Current",
     "Sources of Energy"
   ],
+  
   English: [
     "A Letter to God",
     "Nelson Mandela Long Walk to Freedom",
@@ -48,6 +50,7 @@ let data = {
     "The Sermon at Benares",
     "The Proposal"
   ],
+  
    Hindi: [
     "Kshitij Chapter 1",
     "Kshitij Chapter 2",
@@ -58,6 +61,7 @@ let data = {
     "Sparsh Chapter 2",
     "Sparsh Chapter 3"
   ],
+  
   SST: [
     "Rise of Nationalism in Europe",
     "Nationalism in India",
@@ -91,6 +95,7 @@ let data = {
     "Digital Tools"
   ]
 };
+
 // ================= SUBJECT =================
 function selectSubject(sub){
   document.getElementById("selectedSubject").innerText = sub;
@@ -121,6 +126,7 @@ function openLecture(ch){
   let query = `${ch} class 10 CBSE full explanation`;
   window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`);
 }
+
 // ================= PROGRESS =================
 function markDone(ch){
   let done = JSON.parse(localStorage.getItem("done")) || [];
@@ -139,6 +145,7 @@ function updateStats(){
   document.getElementById("completedCount").innerText = done.length;
   document.getElementById("skillScore").innerText = skill + "%";
 }
+
 // ================= TIMER =================
 let timer = null;
 let sec = 0;
@@ -152,6 +159,7 @@ function startTimer(){
       String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
   },1000);
 }
+
 function pauseTimer(){
   clearInterval(timer);
   timer = null;
@@ -162,6 +170,7 @@ function resetTimer(){
   sec = 0;
   document.getElementById("timer").innerText = "00:00";
 }
+
 // ================= SCHEDULE =================
 function showSchedule(){
   document.getElementById("selectedSubject").innerText = " Weekly Schedule";
@@ -179,5 +188,6 @@ function showSchedule(){
     </div>
   `;
 }
+
 // ================= LOAD =================
 window.onload = updateStats;
